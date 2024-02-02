@@ -20,4 +20,5 @@ jobs:
           python-version: 3.x
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - run: cd tritonaidocs
+      - run: pip install mkdocs
       - run: mkdocs gh-deploy --force
