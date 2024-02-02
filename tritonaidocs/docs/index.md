@@ -1,6 +1,4 @@
-# Documentation
-
-> Documentation Site for Triton AI
+# Welcome to MkDocs
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
