@@ -33,6 +33,8 @@ What you need:
 
 ## Flash the Jetson
 
+On your laptop, with the Jetson connected, do the following.
+
 ```bash
 git clone https://github.com/jetsonhacks/bootFromExternalStorage.git
 cd bootFromExternalStorage
@@ -62,8 +64,8 @@ source flash_jetson_external_storage.sh
 - Connect the JNX to a monitor, keyboard, mouse, and ethernet for internet access and  finish the OEM installation
 
 ```
-User: jetson
-Machine name: ucsdrobocar-color
+Your name: jetson
+Your Computer's Name: ucsdrobocar-color
 Password: jetsonucsd 
 ```
 
