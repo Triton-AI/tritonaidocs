@@ -44,8 +44,9 @@ source get_jetson_files.sh
 cd R35.1/Linux_for_Tegra/nvsdkmanager_flash.sh
 ```
 
-In vim, type `:%s/flash_l4t_t194_nvme.xml/flash_l4t_external.xml/g<enter>`
-Then, type in `:wq<enter>`. This will replace all occurrences of `flash_l4t_t194_nvme.xml` to `flash_l4t_external.xml`
+- In vim, type 
+`:%s/flash_l4t_t194_nvme.xml/flash_l4t_external.xml/g<enter>`
+- Then, type in `:wq<enter>`. This will replace all occurrences of `flash_l4t_t194_nvme.xml` to `flash_l4t_external.xml`
 
 ```bash
 cd ../..
@@ -66,17 +67,19 @@ Password: jetsonucsd
 ```
 
 - Use the APP partition size to the max of the storage SSD (the default option…)
-- Change the power mode to 20W 6 cores
+- Change the power mode to `20W 6 cores`
 
 ## Connect to the Jetson
 
 Two ways:
+
 1. Connect to the same network (presumably UCSDRobocar), run `ssh jetson@ucsdrobocar-color`
+
 2. Connect via USB cable to the jetson. In the terminal, run `ssh jetson@191.168.55.1`
 
 ## Install Jetpack
 
-On Jetson, run df -h. We should have something like this:
+On Jetson, run `df -h`. We should have something like this:
 
 ```bash
 Filesystem      Size  Used Avail Use% Mounted on
