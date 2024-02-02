@@ -3,6 +3,7 @@
 ## Equipments
 
 What you need:
+
 - Jetson Xavier NX
     - Jetson itself
     - 19V Power Cable
