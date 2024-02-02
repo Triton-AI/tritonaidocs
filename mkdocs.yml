@@ -1,4 +1,5 @@
 site_name: Triton AI Docs 
 nav:
   - Home: index.md
+  - Jetson Setup: jetson_setup.md
 theme: readthedocs
