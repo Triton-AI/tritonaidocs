@@ -3,10 +3,10 @@
 ## Why
 1. Fast and useful command line editor. 
 2. Lightweight compared to VSCode. 
-3. Everything is on keyboard. No need for mouse.
-4. So you can stop using Nano and trap your friends in Vim.
+3. Everything is on keyboard. No need for a mouse.
+4. So you can stop using `Nano` and trap your friends in Vim :)
 
-## Instalation
+## Installation
 
 `sudo apt install vim`
 
@@ -23,7 +23,7 @@ Main editing modes:
 
 ### Normal Mode
 
-Where you can move around navigate and quickly edit things. Where you will spend most of your time.  
+Where you can move around, navigate, and quickly edit things. You will be in this mode mostly.  
 
 ### Insert Mode
 
@@ -58,23 +58,23 @@ When you need to select things as a block
 `j`: move cursor down  
 `k`: move cursor up  
 `l`: move cursor right  
-`b`: move cursor back a word  
+`b`: move the cursor back a word  
 `w`: move cursor to next word  
-`e`: move cursor to end of word  
+`e`: move the cursor to the end of the word  
 
-### More advance navigation
+### More advanced navigation
 
 `0`: move to beginning of line  
-`^`: move to first non whitespace character of line  
+`^`: move to the first non-whitespace character of a line  
 `$`: move to last character in line  
 `gg`: move to beginning of file  
 `G`: move to end of file  
-`f<char>`: move cursor to next occurence of <char> (Remember f is find <char>)  
-`t<char>`: move cursor to before next occurence of <char> (Remember t is goto <char>)  
-`F<char>`: move cursor to previous occurence of <char>  
-`T<char>`: move cursor to after previous occurence of <char>  
+`f<char>`: move cursor to next occurrence of <char> (Remember f is find <char>)  
+`t<char>`: move cursor to before next occurrence of <char> (Remember t is goto <char>)  
+`F<char>`: move cursor to previous occurrence of <char>  
+`T<char>`: move cursor to after previous occurrence of <char>  
 
-Can be used with numbers before to repeat that navigation ex. `4j` moves down 4 lines.  
+Can be used with numbers before to repeat that navigation, e.g., `4j` moves down 4 lines.  
 
 ## Action Keys
 
@@ -85,7 +85,7 @@ Ex. `d4w` will delete the next 4 words
 `d`: delete  
 `c`: change (delete + insert mode)  
 `y`: copy (yank)  
-`p`: paste last thing copied or deleted with `d`, `c`, or `x` and more.  
+`p`: paste the last thing copied or deleted with `d`, `c`, or `x` and more.  
 `x`: delete current character   
 `r`: replace current character with the next character input. Doesn't go to insert mode.  
 
@@ -100,21 +100,21 @@ Ex. `d4w` will delete the next 4 words
 ## Insert Mode
 
 `i`: insert before cursor  
-`I`: insert at begining of line  
+`I`: insert at the beginning of line  
 `a`: insert after cursor (Remember with append)  
 `A`: insert at end of line  
 
 ## Searching
 
-`/<characters-to-search>`: Hit enter to perform search. `n` to find next occurence, `N` to find prev occurence.  
+`/<characters-to-search>`: Hit enter to perform search. `n` to find next occurrence, `N` to find previous occurrence.  
 `:s/<characters-to-find-and-replace>/<characters-that-will-replace>`: will only do it once for current line.   
-Use `:s/.../.../g` to replace all occurences in a line.   
-Use `:%s/.../...` to replace first occurence in each line of file.   
-Use `:%s/.../.../g` to replace all occurences.  
+Use `:s/.../.../g` to replace all occurrences in a line.   
+Use `:%s/.../...` to replace first occurrence in each line of file.   
+Use `:%s/.../.../g` to replace all occurrences.  
 
 ## Save and Quit (HELP HOW DO I GET OUT OF VIM)
 
-More traditionally you will do:  
+More traditionally you will do the following:  
 `:w`: will write and save the file   
 `:q`: will quit the file  
 `:wq`: will write and quit  
@@ -123,15 +123,16 @@ Less traditionally:
 
 ### Additional Notes
 
-For additional, practice install the vim extension in VSCode.  
+Additionally, practice installing the Vim extension in VSCode.  
 Vim is much more powerful than just a basic text editor. There are other commands in Neovim.   
 You can make macros and other commands to make your workflow faster.  
 
 ## Links and Resources
 
-[Vim practice](https://www.openvim.com/)  
-[Vim game](https://vim-adventures.com/)  
-[Vim cheatsheet](https://vimsheet.com/)  
-[Missing Semester Vim](https://missing.csail.mit.edu/2020/editors/)  
-`vimtutor` in terminal has tutorial   
-Plenty of other resources online  
+A non-exhaustive list of Vim learning resources:
+
+- [Vim practice](https://www.openvim.com/)  
+- [Vim game](https://vim-adventures.com/)  
+- [Vim cheatsheet](https://vimsheet.com/)  
+- [Missing Semester Vim](https://missing.csail.mit.edu/2020/editors/)  
+- `vimtutor` in terminal has tutorial   
