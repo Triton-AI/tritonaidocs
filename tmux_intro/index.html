@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Tmux - Triton AI Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Tmux";
+        var mkdocs_page_input_path = "tmux_intro.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Triton AI Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Everything Jetson</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../jetson_setup/">Jetson Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../jetson_docker/">Jetson Docker</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tools</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../vim_intro/">Vim</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Tmux</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why">Why</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#basic-usage">Basic Usage</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#useful-commands">Useful Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#pane-commands">Pane commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#window-commands">Window commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#session-commands">Session commands</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#in-tmux">In Tmux</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#outside-tmux">Outside Tmux</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#links-and-resources">Links and Resources</a>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Triton AI Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Tools</li>
+      <li class="breadcrumb-item active">Tmux</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="tmux">Tmux</h1>
+<h2 id="why">Why</h2>
+<ol>
+<li>Ability to open multiple terminals in a single window without having to <code>ssh</code> multiple times.  </li>
+<li>Ability to detach without stopping a running process.  </li>
+</ol>
+<h2 id="installation">Installation</h2>
+<p><code>sudo apt install tmux</code></p>
+<h2 id="basic-usage">Basic Usage</h2>
+<p><code>tmux</code> in a terminal  </p>
+<p>At the bottom, you can see your session name (e.g., <code>[0]</code>), and your window name  (e.g., <code>3: bash</code>).  </p>
+<p>There are sessions, windows, and panes.  </p>
+<ol>
+<li>Sessions are browser windows </li>
+<li>Windows are like browser tabs</li>
+<li>Panes split windows</li>
+</ol>
+<h2 id="useful-commands">Useful Commands</h2>
+<p>All commands will be <code>Ctrl+B</code> and another key.  </p>
+<p>You can tell what pane you are in by the borders being not white.  </p>
+<h3 id="pane-commands">Pane commands</h3>
+<p><code>Ctrl+b %</code>: Split window horizontally <br />
+<code>Ctrl+b "</code>: Split window vertically<br />
+<code>Ctrl+b &lt;direction&gt;</code>: Move between panes in the specific direction using arrow keys<br />
+<code>Ctrl+b z</code>: Zoom in/out of a pane<br />
+<code>Ctrl+b [</code>: Start scrollback in pane<br />
+<code>Ctrl+b x</code>: Remove current pane, will ask for Y/N in the bottom status bar  </p>
+<h3 id="window-commands">Window commands</h3>
+<p><code>Ctrl+b c</code>: Create a new window<br />
+<code>Ctrl+b p</code>: Go to the previous window<br />
+<code>Ctrl+b n</code>: Go to the next window<br />
+<code>Ctrl+b N</code>: Go to the <code>N</code>th window  </p>
+<h3 id="session-commands">Session commands</h3>
+<h4 id="in-tmux">In Tmux</h4>
+<p><code>Ctrl+b d</code>: Detach from current session  </p>
+<h4 id="outside-tmux">Outside Tmux</h4>
+<p><code>tmux ls</code>: List sessions with session names<br />
+<code>tmux a -t &lt;session-name&gt;</code>: Attach to session with session-name  </p>
+<h2 id="links-and-resources">Links and Resources</h2>
+<ul>
+<li><a href="https://hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/">Quick Guide by Ham Vocke</a>  </li>
+<li><a href="https://youtu.be/e8BO_dYxk5c?si=acg68b5aL4hfT78k&amp;t=846">Missing Semester Tmux</a>  </li>
+</ul>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../vim_intro/" class="btn btn-neutral float-left" title="Vim"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../vim_intro/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

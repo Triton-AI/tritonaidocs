@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Jetson Docker - Triton AI Docs</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Jetson Docker";
+        var mkdocs_page_input_path = "jetson_docker.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Triton AI Docs
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Everything Jetson</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../jetson_setup/">Jetson Setup</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Jetson Docker</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#essential-docker-commands">Essential Docker Commands</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#specifications-for-docker-commands">Specifications for Docker Commands</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#docker-run">docker run</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Tools</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../vim_intro/">Vim</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../tmux_intro/">Tmux</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Triton AI Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Everything Jetson</li>
+      <li class="breadcrumb-item active">Jetson Docker</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="docker-guide-for-jetson-xavier-nx">Docker Guide for Jetson Xavier NX</h1>
+<h2 id="essential-docker-commands">Essential Docker Commands</h2>
+<ul>
+<li>To start an existing container which is stopped</li>
+<li><code>docker start &lt;container-name/ID&gt;</code></li>
+<li>To stop a running container</li>
+<li><code>docker stop &lt;container-name/ID&gt;</code></li>
+<li>Then to login to the interactive shell of a container</li>
+<li><code>docker exec -it &lt;container-name/ID&gt; bash</code></li>
+<li>To start an existing container and attach to it in one command</li>
+<li><code>docker start -ai &lt;container-name/ID&gt;</code></li>
+</ul>
+<h3 id="specifications-for-docker-commands">Specifications for Docker Commands</h3>
+<h4 id="docker-run"><code>docker run</code></h4>
+<p>The <code>docker run</code> command first <strong>creates</strong> a writeable container layer over the specified image, and then <strong>starts</strong> it using the specified command.</p>
+<pre><code class="language-bash"># Create and run a new container from an image with image_name and tag
+sudo docker run --runtime nvidia -it --rm --network=host image_name:tag
+# OR
+# Create and run a new container from an image with image_id
+sudo docker run --runtime nvidia -it --rm --network=host image_id 
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../jetson_setup/" class="btn btn-neutral float-left" title="Jetson Setup"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../vim_intro/" class="btn btn-neutral float-right" title="Vim">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../jetson_setup/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../vim_intro/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
