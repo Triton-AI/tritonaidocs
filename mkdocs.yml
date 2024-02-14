@@ -1,7 +1,9 @@
 site_name: Triton AI Docs 
 nav:
   - Home: index.md
-  - Jetson Setup: jetson_setup.md
+  - 'Everything Jetson':
+    - 'Jetson Setup': jetson_setup.md
+    - 'Jetson Docker': jetson_docker.md
   - 'Tools':
     - 'Vim': vim_intro.md
     - 'Tmux': tmux_intro.md
